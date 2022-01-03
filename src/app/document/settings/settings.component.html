@@ -1,0 +1,17 @@
+<ion-content>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-icon slot="end" name="enter-outline"></ion-icon>
+      <ion-grid>
+        <ion-row>
+          <ion-text
+            >Auto-skok po: <ion-text class="value"> {{ toSeconds(rangeControl.value) }}s </ion-text></ion-text
+          >
+        </ion-row>
+        <ion-row>
+          <ion-range min="150" max="2200" step="50" [formControl]="rangeControl"></ion-range>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

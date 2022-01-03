@@ -1,0 +1,114 @@
+ion-item {
+  --padding-end: 4px;
+  --padding-start: 4px;
+  --inner-padding-end: 0px;
+  --inner-padding-start: 0px;
+  --min-height: 2rem;
+  font-size: 1.1rem;
+}
+ion-item::part(native) {
+  box-shadow: 1px 0px 3px 2px #dbdbdb inset;
+}
+ion-item-option {
+  background-color: whitesmoke;
+}
+.noteText {
+  position: absolute;
+  padding-right: 0.4rem;
+  width: fit-content;
+  font-weight: bold;
+  font-size: 1.2rem;
+  bottom: 0%;
+  left: 0.1rem;
+  pointer-events: none;
+  background-image: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.863) 55%, transparent 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 85%;
+  background-position: 80%;
+  ion-text {
+    //ion-text element used, otherwise custom font family is flickering on load
+    font-family: MyHandwritingFont;
+  }
+}
+
+.crossOutOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 25;
+  pointer-events: none;
+}
+.rowSelectedOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #9eff012a;
+  z-index: 20;
+  pointer-events: none;
+}
+.fadedText {
+  color: rgb(138, 138, 138);
+}
+
+ion-grid {
+  --ion-grid-columns: 12;
+  --ion-grid-padding: 0px;
+  height: 100%;
+}
+
+ion-row {
+  height: 100%;
+  box-shadow: 0px 0px 10px 1px grey;
+}
+
+ion-col {
+  height: 100%;
+  --ion-grid-column-padding: 0px;
+  text-align: center;
+  padding-top: 0.3rem;
+  background-color: #bee4ff;
+  background-repeat: no-repeat;
+  background-size: 82%;
+  background-position: center;
+}
+ion-col.deactivatedColumn {
+  background-color: white;
+}
+ion-col.crossedOutActivated {
+  background-color: #eff8ff;
+}
+
+ion-icon {
+  font-size: 1.5rem;
+}
+ion-icon.drag-drop {
+  padding-top: 0.19rem;
+}
+
+.userModified {
+  font-weight: bold;
+}
+
+.phrame-highlight {
+  border: 3px solid rgb(0, 153, 255);
+  background-color: rgba(23, 143, 255, 0.26);
+  z-index: 30;
+}
+.phrame-highlight.noteOverflow {
+  border-bottom: 3px solid rgba(0, 153, 255, 0.253);
+  border-right: 3px solid rgba(0, 153, 255, 0.253);
+}
+.noteOverlayForCrossedOutRow {
+  background-color: rgba(255, 255, 255, 0.55);
+  z-index: 10;
+}
+.phrame-highlight,
+.noteOverlayForCrossedOutRow {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}

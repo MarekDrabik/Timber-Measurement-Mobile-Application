@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="9">
+        <ion-title color="medium">Dokumenty</ion-title>
+      </ion-col>
+      <ion-col size="2">
+        <ion-fab-button (click)="onAddClick()" fill="clear" size="small" class="ion-no-padding"
+          ><ion-icon name="add-outline"></ion-icon
+        ></ion-fab-button>
+      </ion-col>
+    </ion-row>
+
+    <ng-container *ngIf="debugOn">
+      <ion-grid>
+        <ion-row>
+          <ion-label>Database:</ion-label>
+          <ion-select [attr.value]="activeDB" (ionChange)="changeDatabase($event)" okText="Ok" cancelText="Cancel">
+            <ion-select-option value="Debug">Debug</ion-select-option>
+            <ion-select-option value="Presentation">Presentation</ion-select-option>
+            <ion-select-option value="Business">Business</ion-select-option>
+          </ion-select>
+        </ion-row>
+        <ion-row>
+          <ion-input #memoryInput value="10.25.123.138 xxx"></ion-input>
+          <ion-button color="danger" (click)="remoteMemoryServ.requestRemoteMemory(memoryInput.value+'')"
+            >get memory</ion-button
+          >
+        </ion-row>
+      </ion-grid>
+    </ng-container>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <app-document-card [documentInfo]="header" *ngFor="let header of headers; trackBy:trackByFun"></app-document-card>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button class="debugTriggerButton" color="light" (contextmenu)="debugOn=true" (click)="onCogsClick()">
+      <ion-icon name="cog-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-text class="versionNumber">v1.3.3</ion-text>
+</ion-content>

@@ -1,0 +1,22 @@
+<app-log-list-header [activatedColumns]="activatedColumns"></app-log-list-header>
+
+<ion-content>
+  <app-log-list-table [activatedColumns]="activatedColumns"></app-log-list-table>
+</ion-content>
+
+<ng-container *ngIf="modes.summary==false">
+  <div class="selection-copy-container" [ngClass]="{'aboveStandard': modes.standard}">
+    <ion-fab-button (click)="onLocateButton($event)" *ngIf="!modes.standard" class="locateCell">
+      <ion-icon [name]="locateButtonStyle==='arrow'? 'arrow-down-outline' : 'locate-outline'"></ion-icon>
+    </ion-fab-button>
+    <app-log-list-row-copy-panel
+      *ngIf="modes.copiedRows!=0"
+      [rowsCount]="modes.copiedRows"
+    ></app-log-list-row-copy-panel>
+    <app-log-list-row-selection-panel *ngIf="modes.rowSelection"></app-log-list-row-selection-panel>
+  </div>
+</ng-container>
+
+<ion-footer [ngClass]="{collapsed: modes.standard === false}">
+  <app-log-list-input-panel></app-log-list-input-panel>
+</ion-footer>

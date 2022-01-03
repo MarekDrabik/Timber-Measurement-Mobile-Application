@@ -1,0 +1,11 @@
+<ion-item>
+  <ion-card button [routerLink]="['/', 'document', documentInfo.documentId]">
+    <ion-button class="corneredPosition closeButton ion-no-padding" fill="clear" (click)="deleteDocument($event, documentInfo.documentId)"
+      ><ion-icon color="medium" slot="icon-only" size="large" name="close-outline"></ion-icon
+    ></ion-button>
+    <ion-card-header>
+      <ion-card-title>{{ documentInfo.quickName.value }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>{{ documentInfo.createdAt | slovakDate }}</ion-card-content>
+  </ion-card>
+</ion-item>

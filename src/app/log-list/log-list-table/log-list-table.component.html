@@ -1,0 +1,40 @@
+<cdk-virtual-scroll-viewport
+  #scrollViewport
+  [itemSize]="SCROLL_ITEM_SIZE"
+  [minBufferPx]="minBuffer"
+  [maxBufferPx]="maxBuffer"
+>
+  <ion-list>
+    <ng-container *cdkVirtualFor="let row of rows; trackBy: trackByFun; templateCacheSize: 50">
+      <ng-container *ngIf="summaryList == null; else summaryRowsTemplate">
+        <app-log-list-row
+          [showNote]="showNotes"
+          [row]="row"
+          [propsPerCell]="rowBoolProperties.propsPerRow[row.id]"
+          [summaryRow]="summaryList && summaryList[row.id]"
+          [noteIconSvg]="notesIcons[row.id]"
+          [activatedColumns]="activatedColumns"
+        ></app-log-list-row>
+      </ng-container>
+      <ng-template #summaryRowsTemplate>
+        <ng-container *ngIf="!isSummaryRow(row); else summaryInfoRow">
+          <app-row-during-summary
+            [showNote]="showNotes"
+            [row]="row"
+            [propsPerCell]="rowBoolProperties.propsPerRow[row.id]"
+            [summaryRow]="summaryList && summaryList[row.id]"
+            [noteIconSvg]="notesIcons[row.id]"
+            [activatedColumns]="activatedColumns"
+          ></app-row-during-summary>
+        </ng-container>
+        <ng-template #summaryInfoRow>
+          <app-summary-row
+            [summaryRow]="row"
+            [color]="colorService.PROPERTY_COLORS[row.summarizingProperty].main"
+          ></app-summary-row>
+        </ng-template>
+      </ng-template>
+    </ng-container>
+  </ion-list>
+  <div class="endingGap" [ngStyle]="{ height: endingGapHeight + 'rem' }"></div>
+</cdk-virtual-scroll-viewport>

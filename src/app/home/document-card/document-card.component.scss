@@ -1,0 +1,17 @@
+ion-card {
+  width: 93%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.corneredPosition {
+  position: absolute;
+  top: 0;
+  right: 0.2rem;
+  padding: 0 0.2rem !important;
+  z-index: 10;
+}
+
+.closeButton {
+  --ripple-color: red;
+}

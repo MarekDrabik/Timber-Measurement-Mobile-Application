@@ -1,0 +1,27 @@
+<ion-tabs class="ion-no-border">
+  <div slot="top" class="quickName">{{ quickname }}</div>
+  <ion-tab-bar [ngClass]="{'tabBarCollapsed': tabBarCollapsed}" slot="top">
+    <ion-tab-button (click)="redirectHome()">
+      <ion-icon name="home-sharp"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="header">
+      <ion-icon name="reader-outline"></ion-icon>
+      <ion-label>Hlavička</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="list">
+      <ion-icon name="list-outline"></ion-icon>
+      <ion-label>Drevo</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="print">
+      <ion-icon name="print-outline"></ion-icon>
+      <ion-label>Tlač</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button>
+      <ion-icon name="settings-sharp" (click)="presentSettingsPopover()"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,0 +1,19 @@
+ion-row {
+  align-items: center;
+}
+
+ion-list {
+  background-color: mintcream;
+}
+
+.versionNumber {
+  position: fixed;
+  pointer-events: none;
+  bottom: 0.1rem;
+  right: 0.5rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: rgb(175, 175, 175);
+}
+
+
