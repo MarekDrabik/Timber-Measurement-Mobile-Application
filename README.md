@@ -11,7 +11,8 @@ The application is not yet ready for public release, but it is already being use
 * Ing. Andrej Drabik | DVM Arbor spol. s r.o., | +421 911 235 302 <br>
 
 ## This repository
-Because I do plan to make this application commercially available, I included only a few source code files in this repository.
+Because I do plan to make this application commercially available, I included only a few source code files in this repository. <br>
+See folder: [src/app](https://github.com/MarekDrabik/Timber-Measurement-Mobile-Application/tree/main/src/app)
 
 ## Tools used
 [Ionic](https://ionicframework.com/), [Angular](https://angular.io/), [NgRx](https://ngrx.io/), [RxJS](https://rxjs.dev/)
