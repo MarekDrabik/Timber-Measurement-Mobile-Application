@@ -1,6 +1,6 @@
 # Timber Measurement Mobile Application
 <img align="right" src="/.doc/thumbnail2.png" width="400"></img>
-This project is a mobile application that I created in Ionic framework. It is a specialized tool for timber trading business, where it documents measurements of logs and performs related calculations. It offers a functionality to print final output as paper document directly in the field.
+This project is a mobile application made for timber trading business. It documents measurements of logs and performs related calculations. It offers a functionality to print final output as a standardized paper document directly in the field.
 
 Please click here for [full video presentation (18 minutes)](https://youtu.be/gbvlrAXLbRM).
 
@@ -15,4 +15,4 @@ Because I do plan to make this application commercially available, I included on
 See folder: [src/app](https://github.com/MarekDrabik/Timber-Measurement-Mobile-Application/tree/main/src/app)
 
 ## Tools used
-[Ionic](https://ionicframework.com/), [Angular](https://angular.io/), [NgRx](https://ngrx.io/), [RxJS](https://rxjs.dev/)
+[Ionic](https://ionicframework.com/), [Angular](https://angular.io/), [NgRx](https://ngrx.io/), [RxJS](https://rxjs.dev/), SVG
